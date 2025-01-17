@@ -3,6 +3,10 @@
 
 ## Notes
 
+### Language of choice
+
+TypeScript Serverless
+
 ### Time spent
 
 1.5 hours
