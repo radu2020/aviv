@@ -19,6 +19,7 @@ TypeScript Serverless
 
 `GET {{applicationURI}}/listings/{id}/prices`
 
+Example request response:
 ```json5
 [
     {
