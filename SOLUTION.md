@@ -3,12 +3,18 @@
 
 ## Notes
 
-Time spent: 1.5 hours.
+### Time spent
+
+1.5 hours
+
+### Approach
 
 1. Created new table `listing_prices` to store price history for all listings.
 
 2. Added `getListingPrices` handler used to fetch Listing Price History.
+
 `GET {{applicationURI}}/listings/{id}/prices`
+
 ```json5
 [
     {
@@ -28,29 +34,34 @@ Time spent: 1.5 hours.
     }
 ]
 ```
+
 3. Added `insertListingPrice` function. This is used for inserting new price entries.
+
 4. Implemented `insertListingPrice` as part of `addListing` and `updateListing` handlers so that we can start creating price entries whenever a Listing is created or updated.
+
 5. Updated the `listingapi.yaml` file to reflect all the new changes.
+
 6. Removed any mock data and tested all endpoints to make sure that creating and retrieving price history works.
+
+7. Added new endpoint to the Postman Collection.
 
 ## Questions
 
 This section contains additional questions your expected to answer before the debrief interview.
 
-- **What is missing with your implementation to go to production?**
+### What is missing with your implementation to go to production?
 
 Nothing
 
-- **How would you deploy your implementation?**
+### How would you deploy your implementation?
 
 Using CI/CD, deploy changes to each environment once at a time and test and monitor closely if the system is stable. Finally deploy changes to production.
 
-- **If you had to implement the same application from scratch, what would you do differently?**
+### If you had to implement the same application from scratch, what would you do differently?
 
 Nothing
 
-- **The application aims at storing hundreds of thousands listings and millions of prices, and be accessed by millions
-  of users every month. What should be anticipated and done to handle it?**
+### The application aims at storing hundreds of thousands listings and millions of prices, and be accessed by millions of users every month. What should be anticipated and done to handle it?
 
 1. Scalability
 - Horizontal Scalability: Ensure your application can handle an increasing number of users by adding more servers. Use a load balancer to distribute traffic evenly across servers.
