@@ -1,33 +1,23 @@
 {
 	"info": {
-		"_postman_id": "6f0ff360-2358-43e3-8005-2e35e3c5a9ca",
+		"_postman_id": "f574133f-24fa-443d-a600-05c45220ed40",
 		"name": "Aviv Technical Test",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "19906920"
+		"_exporter_id": "26058745"
 	},
 	"item": [
 		{
-			"name": "Update a listing",
+			"name": "Get all listings",
 			"request": {
-				"method": "PUT",
+				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n   \"name\":\"Mikhail Schmiedt\",\n   \"postal_address\":{\n      \"street_address\":\"Johan-Ernst-Ring 7\",\n      \"postal_code\":\"21810\",\n      \"city\":\"Berchtesgaden\",\n      \"country\":\"DE\"\n   },\n   \"description\":\"Lorem Ipsum Dolor ...\",\n   \"building_type\":\"STUDIO\",\n   \"latest_price_eur\":720000,\n   \"surface_area_m2\":167,\n   \"rooms_count\":6,\n   \"bedrooms_count\":2,\n   \"contact_phone_number\":\"+219779210354\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "{{applicationURI}}/listings/10",
+					"raw": "{{applicationURI}}/listings",
 					"host": [
 						"{{applicationURI}}"
 					],
 					"path": [
-						"listings",
-						"10"
+						"listings"
 					]
 				}
 			},
@@ -60,17 +50,46 @@
 			"response": []
 		},
 		{
-			"name": "Get all listings",
+			"name": "Update a listing",
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\":\"Mikhail Schmiedt\",\n   \"postal_address\":{\n      \"street_address\":\"Johan-Ernst-Ring 7\",\n      \"postal_code\":\"21810\",\n      \"city\":\"Berchtesgaden\",\n      \"country\":\"DE\"\n   },\n   \"description\":\"Lorem Ipsum Dolor ...\",\n   \"building_type\":\"STUDIO\",\n   \"latest_price_eur\":750000,\n   \"surface_area_m2\":167,\n   \"rooms_count\":6,\n   \"bedrooms_count\":2,\n   \"contact_phone_number\":\"+219779210354\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{applicationURI}}/listings",
+					"raw": "{{applicationURI}}/listings/1",
 					"host": [
 						"{{applicationURI}}"
 					],
 					"path": [
-						"listings"
+						"listings",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get listing price history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{applicationURI}}/listings/1/prices",
+					"host": [
+						"{{applicationURI}}"
+					],
+					"path": [
+						"listings",
+						"1",
+						"prices"
 					]
 				}
 			},
